@@ -37,7 +37,7 @@ class AgentCapability:
 class PaymentMiddleware:
     """x402 SOL payment verification middleware."""
     
-    PAYMENT_WALLET = "7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A"
+    PAYMENT_WALLET = "9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb"
     PLATFORM_FEE = 0.10  # 10%
     
     async def verify_payment(

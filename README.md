@@ -9,7 +9,7 @@ Currency: **SOL (Solana blockchain)** | Protocol: **x402 (HTTP 402)**
 ## Your Payment Wallet
 
 ```
-7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 ```
 
 **Click to copy:** See dashboard.html or use the copy function in the marketplace.
@@ -46,7 +46,7 @@ Server runs at `http://localhost:8000`
 ### Step 1: Send SOL
 
 ```
-Wallet: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+Wallet: 9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 Network: Solana Mainnet
 ```
 

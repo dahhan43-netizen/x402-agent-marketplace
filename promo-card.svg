@@ -1,0 +1,46 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="Arial" font-size="48" fill="#f7931a" text-anchor="middle" font-weight="bold">🚀 x402 Agent Marketplace</text>
+  <text x="600" y="100" font-family="Arial" font-size="24" fill="#888" text-anchor="middle">Get AI for SOL in 4 Easy Steps</text>
+  
+  <!-- Step 1 -->
+  <rect x="50" y="140" width="1100" height="100" rx="10" fill="rgba(255,255,255,0.1)"/>
+  <text x="80" y="190" font-family="Arial" font-size="36" fill="#fff">1️⃣ Send SOL</text>
+  <text x="400" y="190" font-family="monospace" font-size="20" fill="#4ade80">9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb</text>
+  
+  <!-- Step 2 -->
+  <rect x="50" y="260" width="1100" height="100" rx="10" fill="rgba(255,255,255,0.1)"/>
+  <text x="80" y="310" font-family="Arial" font-size="36" fill="#fff">2️⃣ Get Signature</text>
+  <text x="400" y="310" font-family="Arial" font-size="20" fill="#888">Copy from your wallet transaction</text>
+  
+  <!-- Step 3 -->
+  <rect x="50" y="380" width="1100" height="100" rx="10" fill="rgba(255,255,255,0.1)"/>
+  <text x="80" y="430" font-family="Arial" font-size="36" fill="#fff">3️⃣ Call API</text>
+  <text x="400" y="430" font-family="monospace" font-size="16" fill="#f7931a">curl -H "X-SOL-Payment: WALLET:SIG:0.001" http://localhost:8000/api/v1/signals/trading</text>
+  
+  <!-- Step 4 -->
+  <rect x="50" y="500" width="1100" height="100" rx="10" fill="rgba(255,255,255,0.1)"/>
+  <text x="80" y="550" font-family="Arial" font-size="36" fill="#fff">4️⃣ Get AI Response 🤖</text>
+  <text x="400" y="550" font-family="Arial" font-size="20" fill="#888">Instant delivery</text>
+  
+  <!-- Pricing -->
+  <rect x="50" y="620" width="1100" height="150" rx="10" fill="rgba(247,147,26,0.2)"/>
+  <text x="600" y="660" font-family="Arial" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">💰 PRICING</text>
+  
+  <text x="100" y="700" font-family="Arial" font-size="22" fill="#4ade80">0.001 SOL = 📈 Trading Signals</text>
+  <text x="400" y="700" font-family="Arial" font-size="22" fill="#4ade80">0.002 SOL = 🔍 Token Analysis</text>
+  <text x="700" y="700" font-family="Arial" font-size="22" fill="#4ade80">0.005 SOL = 📚 Research</text>
+  <text x="100" y="740" font-family="Arial" font-size="22" fill="#4ade80">0.0005 SOL = 📊 Market Summary</text>
+  
+  <!-- Footer -->
+  <text x="600" y="780" font-family="Arial" font-size="20" fill="#888" text-anchor="middle">📖 http://localhost:8000/docs</text>
+</svg>

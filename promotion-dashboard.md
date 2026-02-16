@@ -71,7 +71,7 @@
 - **Dashboard**: http://localhost:8000
 - **API Docs**: http://localhost:8000/docs
 - **GitHub**: https://github.com/dahhan43/x402-agent-marketplace (pending)
-- **Wallet**: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+- **Wallet**: 9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 
 ### 📈 Success Metrics
 

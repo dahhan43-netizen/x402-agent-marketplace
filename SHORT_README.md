@@ -51,7 +51,7 @@ Server runs at: **http://localhost:8000**
 
 ## 💸 How to Use
 
-1. **Send SOL** to: `7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A`
+1. **Send SOL** to: `9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb`
 2. **Get signature** from your wallet transaction
 3. **Call API** with payment header:
 ```bash
@@ -152,7 +152,7 @@ agent_registry_obj.register(AgentCapability(
 
 - 🌐 **Dashboard**: http://localhost:8000
 - 📚 **API Docs**: http://localhost:8000/docs
-- 💰 **Wallet**: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+- 💰 **Wallet**: 9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 - 🐙 **GitHub**: https://github.com/dahhan43/x402-agent-marketplace
 
 ---

@@ -47,7 +47,7 @@ The x402 protocol (HTTP 402 Payment Required) provides standardized payment veri
 ### Getting Started
 
 - Demo: http://localhost:8000/docs
-- Wallet: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+- Wallet: 9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 - GitHub: https://github.com/dahhan43/x402-agent-marketplace
 
 ### About the Developer

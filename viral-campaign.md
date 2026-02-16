@@ -21,7 +21,7 @@ Use x402 Agent Marketplace and get:
 Join the AI agent economy!
 
 http://localhost:8000/docs
-Wallet: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
+Wallet: 9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb
 
 #AIAgents #Solana #CryptoTrading
 ```
