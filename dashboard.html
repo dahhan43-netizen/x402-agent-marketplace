@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x402 Agent Marketplace - SOL Only</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e4e4e7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header {
+            text-align: center;
+            padding: 50px 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #00d4ff, #9945ff, #14f195);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .tagline { color: #9ca3af; font-size: 1.2rem; }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(90deg, #00d4ff, #14f195);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+        }
+        .stat-value { font-size: 2.5rem; font-weight: bold; color: #14f195; }
+        .stat-label { color: #9ca3af; margin-top: 5px; }
+        .section-title { font-size: 1.8rem; margin-bottom: 25px; color: #fff; }
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .agent-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        .agent-card:hover {
+            border-color: #9945ff;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(153, 69, 255, 0.1);
+        }
+        .agent-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .agent-name { font-size: 1.3rem; font-weight: 600; }
+        .agent-price {
+            background: linear-gradient(90deg, #00d4ff, #14f195);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .agent-desc { color: #9ca3af; line-height: 1.6; margin-bottom: 20px; }
+        .agent-meta { display: flex; gap: 20px; font-size: 0.85rem; color: #6b7280; }
+        .agent-meta span { display: flex; align-items: center; gap: 6px; }
+        .api-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .code-block {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            color: #c9d1d9;
+            line-height: 1.8;
+        }
+        .method { color: #7ee787; font-weight: 600; }
+        .path { color: #79c0ff; }
+        .comment { color: #8b949e; }
+        
+        .payment-info {
+            background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(20,241,149,0.1));
+            border: 1px solid #00d4ff;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .payment-title { font-size: 1.3rem; margin-bottom: 15px; color: #00d4ff; }
+        .payment-steps { list-style: none; }
+        .payment-steps li {
+            padding: 12px 0;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .step-num {
+            background: #00d4ff;
+            color: #000;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .wallet-box {
+            background: #1a1a2e;
+            border: 1px solid #00d4ff;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 25px;
+        }
+        .wallet-label { color: #6b7280; font-size: 0.9rem; margin-bottom: 10px; }
+        .wallet-address {
+            font-family: monospace;
+            font-size: 1rem;
+            color: #14f195;
+            word-break: break-all;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .copy-btn {
+            margin-top: 15px;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #00d4ff, #14f195);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        .copy-btn:hover { opacity: 0.9; }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 x402 Agent Marketplace</h1>
+            <p class="tagline">AI agent capabilities via SOL micro-payments</p>
+            <div class="badge">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                SOL (Solana Blockchain) Only
+            </div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Available Agents</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">0.0005</div>
+                <div class="stat-label">SOL (Lowest Price)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">90%</div>
+                <div class="stat-label">Your Revenue</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">10%</div>
+                <div class="stat-label">Platform Fee</div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Available Agents</h2>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-name">📈 Trading Signals</span>
+                    <span class="agent-price">0.001 SOL</span>
+                </div>
+                <p class="agent-desc">AI-generated trading signals with entry/exit levels, confidence scores, and risk assessment.</p>
+                <div class="agent-meta">
+                    <span>⚡ 10/min</span>
+                    <span>🎯 75% conf</span>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-name">🔍 Token Analysis</span>
+                    <span class="agent-price">0.002 SOL</span>
+                </div>
+                <p class="agent-desc">Deep token analysis with rug pull risk scores, holder distribution, and liquidity metrics.</p>
+                <div class="agent-meta">
+                    <span>⚡ 5/min</span>
+                    <span>📊 68% score</span>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-name">📚 Research Agent</span>
+                    <span class="agent-price">0.005 SOL</span>
+                </div>
+                <p class="agent-desc">AI-powered research on topics with findings, sources, and key takeaways.</p>
+                <div class="agent-meta">
+                    <span>⚡ 3/min</span>
+                    <span>🔎 Deep</span>
+                </div>
+            </div>
+            
+            <div class="agent-card">
+                <div class="agent-header">
+                    <span class="agent-name">📊 Market Summary</span>
+                    <span class="agent-price">0.0005 SOL</span>
+                </div>
+                <p class="agent-desc">Brief market summaries with prices, sentiment, key levels, and hot sectors.</p>
+                <div class="agent-meta">
+                    <span>⚡ 30/min</span>
+                    <span>⚡ Fast</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-info">
+            <h3 class="payment-title">💰 How to Pay (SOL Only)</h3>
+            <ul class="payment-steps">
+                <li><span class="step-num">1</span> Send SOL to the payment wallet below</li>
+                <li><span class="step-num">2</span> Get transaction signature from Solana Explorer</li>
+                <li><span class="step-num">3</span> Include in request: X-SOL-Payment: wallet:sig:amount</li>
+                <li><span class="step-num">4</span> Receive agent response!</li>
+            </ul>
+            <div class="wallet-box">
+                <div class="wallet-label">📭 SEND SOL HERE</div>
+                <div class="wallet-address" id="wallet">4D8jCkTMWjaQzDuZkwibk8ML34LSCKVCKS8kC6RFYuX</div>
+                <button class="copy-btn" onclick="copyWallet()">📋 Copy Address</button>
+            </div>
+        </div>
+        
+        <h2 class="section-title">API Usage</h2>
+        
+        <div class="api-section">
+            <h3 style="margin-bottom:15px;">Get Trading Signals</h3>
+            <div class="code-block">
+<span class="comment"># Request with SOL payment proof</span>
+<span class="method">GET</span> <span class="path">/api/v1/signals/trading</span>
+Headers:
+  X-SOL-Payment: &lt;wallet&gt;:&lt;signature&gt;:&lt;amount&gt;
+
+<span class="comment"># Example:</span>
+curl -X GET "http://localhost:8000/api/v1/signals/trading" \
+  -H "X-SOL-Payment: 4D8jCkT...:XyZ123...:0.001"
+            </div>
+        </div>
+        
+        <div class="api-section">
+            <h3 style="margin-bottom:15px;">Analyze Token</h3>
+            <div class="code-block">
+<span class="method">GET</span> <span class="path">/api/v1/analysis/token?address=7N9...</span>
+
+<span class="comment"># With SOL payment:</span>
+curl -X GET "http://localhost:8000/api/v1/analysis/token?address=7N9..." \
+  -H "X-SOL-Payment: wallet:sig:0.002"
+            </div>
+        </div>
+        
+        <div class="api-section">
+            <h3 style="margin-bottom:15px;">Payment Header Format</h3>
+            <div class="code-block">
+<span class="comment"># X-SOL-Payment header format:</span>
+<span class="string">"wallet_address:transaction_signature:amount"</span>
+
+<span class="comment"># Example:</span>
+X-SOL-Payment: "4D8jCkT...:Sig123abc...:0.001"
+
+<span class="comment"># Where:</span>
+<span class="comment"># - wallet: Your Solana wallet address</span>
+<span class="comment"># - signature: Transaction signature from Solana</span>
+<span class="comment"># - amount: Amount in SOL (e.g., 0.001)</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>🤖 Built by DahhansBot | 💱 Powered by Solana | 📜 MIT License</p>
+        </footer>
+    </div>
+    
+    <script>
+    function copyWallet() {
+        navigator.clipboard.writeText('4D8jCkTMWjaQzDuZkwibk8ML34LSCKVCKS8kC6RFYuX');
+        alert('Wallet address copied! 📋');
+    }
+    </script>
+</body>
+</html>

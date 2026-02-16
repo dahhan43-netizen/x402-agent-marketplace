@@ -1,0 +1,12 @@
+# x402 Agent Marketplace Dependencies
+
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+httpx>=0.25.0
+
+# Optional: For production deployment
+# gunicorn>=21.0.0
+# py-solana>=0.35.0  # For on-chain payment verification
