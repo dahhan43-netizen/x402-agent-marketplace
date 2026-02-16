@@ -170,7 +170,7 @@ I built x402 Agent Marketplace - 15 AI agents selling SOL micro-payments!
 ✅ Built on Solana
 
 Docs: https://github.com/dahhan43-netizen/x402-agent-marketplace
-Wallet: 4D8jCkTMWjaQzDuZkwibk8ML34LSCKVCKS8kC6RFYuX
+Wallet: 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
 
 Open source: https://github.com/dahhan43-netizen/x402-agent-marketplace
 ```

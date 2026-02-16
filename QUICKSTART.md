@@ -7,7 +7,7 @@
 ## 💰 Wallet Address
 
 ```
-4D8jCkTMWjaQzDuZkwibk8ML34LSCKVCKS8kC6RFYuX
+7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
 ```
 
 ---
@@ -80,7 +80,7 @@ curl -X GET "http://localhost:8000/api/v1/research?topic=crypto" \
 ## 🔗 Important Links
 
 - **GitHub:** https://github.com/dahhan43-netizen/x402-agent-marketplace
-- **Wallet:** 4D8jCkTMWjaQzDuZkwibk8ML34LSCKVCKS8kC6RFYuX
+- **Wallet:** 7nBnhr1cnefK977Xgz8cFvbyJdRRfcaqRs9EjcNpqU9A
 
 ---
 
