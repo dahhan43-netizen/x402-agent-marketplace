@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>x402 Agent Marketplace - 15 AI Agents for SOL</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 60px 0; }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #00d4ff, #9945ff, #14f195);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.3em; color: #888; margin-bottom: 40px; }
+        
+        /* Wallet Box */
+        .wallet-box {
+            background: linear-gradient(135deg, rgba(0,212,255,0.15), rgba(20,241,149,0.15));
+            border: 2px solid #00d4ff;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .wallet-box h3 { margin-bottom: 15px; color: #14f195; }
+        .wallet {
+            font-family: monospace;
+            font-size: 1.1em;
+            color: #fff;
+            word-break: break-all;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+        }
+        
+        /* Steps */
+        .steps { margin: 60px 0; }
+        .steps h2 { text-align: center; margin-bottom: 40px; font-size: 2em; }
+        .step {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        .step:hover { border-color: #9945ff; transform: translateX(10px); }
+        .step-num {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #00d4ff, #14f195);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #000;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .step-content h4 { font-size: 1.2em; margin-bottom: 5px; }
+        .step-content p { color: #888; }
+        .step code {
+            background: rgba(0,212,255,0.2);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #00d4ff;
+        }
+        
+        /* Agents Grid */
+        .agents { margin: 60px 0; }
+        .agents h2 { text-align: center; margin-bottom: 40px; font-size: 2em; }
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .agent-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+        .agent-card:hover {
+            border-color: #9945ff;
+            transform: translateY(-5px);
+        }
+        .agent-icon { font-size: 2em; margin-bottom: 10px; }
+        .agent-name { font-size: 1.1em; font-weight: bold; margin-bottom: 8px; }
+        .agent-desc { color: #888; font-size: 0.9em; margin-bottom: 15px; }
+        .agent-price {
+            background: linear-gradient(90deg, #00d4ff, #14f195);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+        
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(153,69,255,0.1), rgba(0,212,255,0.1));
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+        .cta h2 { font-size: 2em; margin-bottom: 20px; }
+        .cta p { color: #888; margin-bottom: 30px; }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #00d4ff, #14f195);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
+        
+        /* Footer */
+        footer { text-align: center; padding: 40px; color: #555; font-size: 0.9em; }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .step { flex-direction: column; text-align: center; }
+            .step-num { margin: 0 0 15px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <h1>🤖 x402 Agent Marketplace</h1>
+            <p>15 AI Agents Selling SOL Micro-Payments</p>
+        </div>
+        
+        <!-- Wallet -->
+        <div class="wallet-box">
+            <h3>💰 Send SOL to Start</h3>
+            <div class="wallet">9uVX5aRkCQ1R89FHtgf5W2VXbqB4MeaeBFaKsxBv4UEF</div>
+        </div>
+        
+        <!-- How It Works -->
+        <div class="steps">
+            <h2>📖 How It Works - 4 Simple Steps</h2>
+            
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>Send SOL</h4>
+                    <p>Transfer SOL to the wallet above using Phantom, Solflare, or any Solana wallet.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>Get Signature</h4>
+                    <p>Copy the transaction signature from your wallet or Solana Explorer after sending.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>Call API</h4>
+                    <p>Use: <code>curl -H "X-SOL-Payment: YOUR_WALLET:SIGNATURE:0.001" http://localhost:8000/api/v1/signals/trading</code></p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h4>Get AI Response</h4>
+                    <p>Receive instant AI-generated response! Trading signals, analysis, research, and more.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agents -->
+        <div class="agents">
+            <h2>🎯 15 AI Agents Available</h2>
+            
+            <div class="agents-grid">
+                <!-- Trading -->
+                <div class="agent-card">
+                    <div class="agent-icon">📈</div>
+                    <div class="agent-name">Trading Signals</div>
+                    <div class="agent-desc">AI buy/sell recommendations with entry/exit levels</div>
+                    <div class="agent-price">0.001 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">📊</div>
+                    <div class="agent-name">Trading Patterns</div>
+                    <div class="agent-desc">Chart pattern recognition and analysis</div>
+                    <div class="agent-price">0.002 SOL</div>
+                </div>
+                
+                <!-- Research -->
+                <div class="agent-card">
+                    <div class="agent-icon">🔍</div>
+                    <div class="agent-name">Token Analysis</div>
+                    <div class="agent-desc">Rug pull risk scores, liquidity analysis</div>
+                    <div class="agent-price">0.002 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">📚</div>
+                    <div class="agent-name">Research Agent</div>
+                    <div class="agent-desc">AI-powered research on any topic</div>
+                    <div class="agent-price">0.005 SOL</div>
+                </div>
+                
+                <!-- Memecoin -->
+                <div class="agent-card">
+                    <div class="agent-icon">🦨</div>
+                    <div class="agent-name">Memecoin Scanner</div>
+                    <div class="agent-desc">Scan trending memecoins</div>
+                    <div class="agent-price">0.002 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">🎯</div>
+                    <div class="agent-name">Pump.fun Sniper</div>
+                    <div class="agent-desc">Find new tokens early</div>
+                    <div class="agent-price">0.005 SOL</div>
+                </div>
+                
+                <!-- Tracking -->
+                <div class="agent-card">
+                    <div class="agent-icon">🐋</div>
+                    <div class="agent-name">Whale Tracker</div>
+                    <div class="agent-desc">Track large SOL transactions</div>
+                    <div class="agent-price">0.003 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">📊</div>
+                    <div class="agent-name">Portfolio Tracker</div>
+                    <div class="agent-desc">Track your portfolio performance</div>
+                    <div class="agent-price">0.001 SOL</div>
+                </div>
+                
+                <!-- Analytics -->
+                <div class="agent-card">
+                    <div class="agent-icon">📈</div>
+                    <div class="agent-name">Volume Analyzer</div>
+                    <div class="agent-desc">Analyze volume patterns</div>
+                    <div class="agent-price">0.002 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">😌</div>
+                    <div class="agent-name">Sentiment Analysis</div>
+                    <div class="agent-desc">Market sentiment data</div>
+                    <div class="agent-price">0.0005 SOL</div>
+                </div>
+                
+                <!-- Opportunities -->
+                <div class="agent-card">
+                    <div class="agent-icon">🎁</div>
+                    <div class="agent-name">Airdrop Hunter</div>
+                    <div class="agent-desc">Find airdrop opportunities</div>
+                    <div class="agent-price">0.001 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">💵</div>
+                    <div class="agent-name">DeFi Yields</div>
+                    <div class="agent-desc">Best yield farming rates</div>
+                    <div class="agent-price">0.0015 SOL</div>
+                </div>
+                
+                <!-- News & Info -->
+                <div class="agent-card">
+                    <div class="agent-icon">📰</div>
+                    <div class="agent-name">News Digest</div>
+                    <div class="agent-desc">AI-powered crypto news</div>
+                    <div class="agent-price">0.0015 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">📊</div>
+                    <div class="agent-name">Market Summary</div>
+                    <div class="agent-desc">Daily market overview</div>
+                    <div class="agent-price">0.0005 SOL</div>
+                </div>
+                
+                <div class="agent-card">
+                    <div class="agent-icon">🏛️</div>
+                    <div class="agent-name">Governance Votes</div>
+                    <div class="agent-desc">Track DAO proposals</div>
+                    <div class="agent-price">0.0005 SOL</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="cta">
+            <h2>🚀 Try It Now!</h2>
+            <p>15 AI Agents. Pay SOL. Get AI. No subscriptions.</p>
+            <a href="https://github.com/dahhan43-netizen/x402-agent-marketplace" class="cta-btn">📦 View on GitHub</a>
+            <a href="https://github.com/dahhan43-netizen/x402-agent-marketplace" class="cta-btn">📖 Documentation</a>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>Built with 🤖 by DahhansBot | Powered by Solana 🌙</p>
+            <p>Wallet: 9uVX5aRkCQ1R89FHtgf5W2VXbqB4MeaeBFaKsxBv4UEF</p>
+        </footer>
+    </div>
+</body>
+</html>
