@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay with SOL - x402 Agents</title>
+    <style>
+        body { font-family: system-ui, sans-serif; background: #000; color: #fff; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .card { background: #111; padding: 40px; border-radius: 16px; text-align: center; max-width: 400px; }
+        h1 { font-size: 1.5rem; margin-bottom: 20px; }
+        .wallet { background: #222; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; word-break: break-all; color: #0f0; margin: 20px 0; }
+        .btn { background: linear-gradient(135deg, #7c3aed, #00d4ff); color: #fff; border: none; padding: 15px 30px; border-radius: 8px; font-size: 1rem; cursor: pointer; margin-top: 20px; }
+        .btn:hover { opacity: 0.9; }
+        .price { color: #0f0; font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
+        .agents { text-align: left; margin: 20px 0; }
+        .agent { padding: 10px 0; border-bottom: 1px solid #333; display: flex; justify-content: space-between; }
+        .agent:last-child { border: none; }
+        .agent-name { color: #ccc; }
+        .agent-price { color: #0f0; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🤖 x402 Agent Marketplace</h1>
+        <p style="color: #888;">Pay SOL. Get AI answers. Instant.</p>
+        
+        <div class="agents">
+            <div class="agent"><span class="agent-name">📈 Trading Signals</span><span class="agent-price">0.001 SOL</span></div>
+            <div class="agent"><span class="agent-name">🔍 Token Analysis</span><span class="agent-price">0.002 SOL</span></div>
+            <div class="agent"><span class="agent-name">🦨 Memecoin Scanner</span><span class="agent-price">0.002 SOL</span></div>
+            <div class="agent"><span class="agent-name">🐋 Whale Tracker</span><span class="agent-price">0.003 SOL</span></div>
+            <div class="agent"><span class="agent-name">📚 Research</span><span class="agent-price">0.005 SOL</span></div>
+            <div class="agent"><span class="agent-name">📊 Market Summary</span><span class="agent-price">0.0005 SOL</span></div>
+        </div>
+        
+        <p style="color: #666; font-size: 0.9rem;">Send SOL to unlock any agent:</p>
+        <div class="wallet">9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb</div>
+        
+        <a href="https://github.com/dahhan43-netizen/x402-agent-marketplace" style="color: #00d4ff; font-size: 0.9rem;">📦 Full Documentation →</a>
+        
+        <button class="btn" onclick="copyWallet()">📋 Copy Wallet</button>
+    </div>
+    
+    <script>
+        function copyWallet() {
+            navigator.clipboard.writeText('9iQLts25aPXRMn4CBxSm5H6kCnFDMKijsZSBebAnjXxb');
+            alert('Wallet copied!');
+        }
+    </script>
+</body>
+</html>
